@@ -15,9 +15,13 @@ pipeline {
     }
 
     environment {
+
+
+            environment {
         PYTHON_DIR = 'C:\\Users\\drath\\AppData\\Local\\Programs\\Python\\Python314'
-        PYTHON_EXE = "${PYTHON_DIR}\\python.exe"
-        PATH = "${PYTHON_DIR};${PYTHON_DIR}\\Scripts;${env.PATH}"
+        PATH+PYTHON = "${PYTHON_DIR};${PYTHON_DIR}\\Scripts"
+    }
+
     }
 
     stages {
