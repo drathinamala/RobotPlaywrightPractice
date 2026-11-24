@@ -15,21 +15,22 @@ pipeline {
     }
 
     environment {
-        PYTHON_EXE = 'C:\\Users\\drath\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+        PYTHON_DIR = 'C:\\Users\\drath\\AppData\\Local\\Programs\\Python\\Python314'
+        PYTHON_EXE = "${PYTHON_DIR}\\python.exe"
+        PATH = "${PYTHON_DIR};${PYTHON_DIR}\\Scripts;${env.PATH}"
     }
 
     stages {
         stage('Verify Environment') {
             steps {
-                bat "${PYTHON_EXE} --version"
+                bat 'python --version'
                 echo "Selected Suite Profile: ${params.SUITE_PROFILE} | Parallel Workers: ${params.PARALLEL_WORKERS}"
             }
         }
 
         stage('Run Parallel Playwright Tests (Pabot)') {
             steps {
-                bat "${PYTHON_EXE} -m pabot.pabot --testlevelsplit --processes ${params.PARALLEL_WORKERS} --argumentfile configs/${params.SUITE_PROFILE}.args tests/"
-
+                bat "pabot --testlevelsplit --processes ${params.PARALLEL_WORKERS} --argumentfile configs/${params.SUITE_PROFILE}.args tests/"
             }
         }
     }
