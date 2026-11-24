@@ -1,6 +1,6 @@
 --include smoke
 --variable HEADLESS:True
 --variable BROWSER:chromium
---outputdir results/smoke
+--outputdir results
 --loglevel INFO
 tests/
