@@ -14,13 +14,11 @@ pipeline {
         )
     }
 
+
     environment {
-
-
-            environment {
         PYTHON_DIR = 'C:\\Users\\drath\\AppData\\Local\\Programs\\Python\\Python314'
-        PATH+PYTHON = "${PYTHON_DIR};${PYTHON_DIR}\\Scripts"
-    }
+        'PATH+PYTHON' = "${PYTHON_DIR};${PYTHON_DIR}\\Scripts"
+
 
     }
 
