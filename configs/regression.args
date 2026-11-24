@@ -1,0 +1,6 @@
+--include regression
+--variable HEADLESS:True
+--variable BROWSER:chromium
+--outputdir results/regression
+--loglevel TRACE
+tests/

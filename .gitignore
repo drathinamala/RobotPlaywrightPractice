@@ -1,0 +1,9 @@
+.idea/
+.venv/
+__pycache__/
+results/
+*.xml
+*.html
+*.png
+*.webm
+*.zip
