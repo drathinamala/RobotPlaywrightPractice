@@ -1,6 +1,5 @@
---include smoke
+--include regression
 --variable HEADLESS:True
 --variable BROWSER:chromium
 --outputdir results
---loglevel INFO
-tests/
+--loglevel TRACE

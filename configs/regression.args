@@ -3,4 +3,4 @@
 --variable BROWSER:chromium
 --outputdir results
 --loglevel TRACE
-tests/
+

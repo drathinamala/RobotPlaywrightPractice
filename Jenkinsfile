@@ -28,7 +28,8 @@ pipeline {
 
         stage('Run Parallel Playwright Tests (Pabot)') {
             steps {
-                bat "${PYTHON_EXE} -m pabot.pabot --testlevelsplit --processes ${params.PARALLEL_WORKERS} --argumentfile configs/${params.SUITE_PROFILE}.args"
+                bat "${PYTHON_EXE} -m pabot.pabot --testlevelsplit --processes ${params.PARALLEL_WORKERS} --argumentfile configs/${params.SUITE_PROFILE}.args tests/"
+
             }
         }
     }
