@@ -17,10 +17,9 @@ pipeline {
 
     environment {
         PYTHON_DIR = 'C:\\Users\\drath\\AppData\\Local\\Programs\\Python\\Python314'
-        'PATH+PYTHON' = "${PYTHON_DIR};${PYTHON_DIR}\\Scripts"
-
-
+        PATH = "${PYTHON_DIR};${PYTHON_DIR}\\Scripts;${env.PATH}"
     }
+
 
     stages {
         stage('Verify Environment') {
